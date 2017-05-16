@@ -1,4 +1,4 @@
-class ArticleController < ApplicationController
+class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -27,7 +27,7 @@ class ArticleController < ApplicationController
 
   def destroy
     @article.destroy
-    redirect_to articles.path(@article)
+    redirect_to articles_path
   end
 
   private

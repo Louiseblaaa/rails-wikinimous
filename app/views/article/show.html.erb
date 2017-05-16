@@ -1,2 +1,13 @@
-<h1>Article#show</h1>
-<p>Find me in app/views/article/show.html.erb</p>
+<h2><%= @article.name %></h2>
+<ul>
+  <li><%= @article.content %>
+  </ul>
+
+<%= link_to "Delete", article_path(@article),
+  method: :delete,
+  date: { confirm: "Are you sure ?" } %>
+
+<%= link_to "Edit", edit_article_path(@article) %>
+
+<%= link_to "Tous les articles", articles_path(@article) %>
+
