@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+
+
+      <h1>New article</h1>
+
+      <%= form_for(@article) do |f| %>
+
+      <form role="form" class="new_article" id="new_article" action="/articles" accept-charset="UTF-8" method="post">
+        <input name="utf8" value="✓" type="hidden">
+        <div class="form-group">
+          <%= f.label :title, "Titre", class:"control-label required" %>
+          <div>
+            <%= f.text_field :title, class:"form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+        <%= f.label :content, "Content", class:"control-label required" %>
+          <div>
+          <%= f.text_area :content, class: "form-control" %>
+          </div>
+        </div>
+
+        <script>
+          $('.form-control').ace({ theme: 'twilight', lang: 'ruby' })
+        </script>
+
+        <%= f.submit 'Submit', class: "btn btn-primary" %>
+
+        <button href="/articles">Back</button>
+      </form>
+      <% end %>
+
+    </div>
+  </div>
+</div>
